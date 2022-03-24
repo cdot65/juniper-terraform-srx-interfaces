@@ -22,7 +22,7 @@ module "interfaces" {
   interface_name        = "lo0"
   interface_description = "provisioned with Terraform"
   subinterface_unit     = "0"
-  subinterface_address  = "10.1.2.0/32"
+  subinterface_address  = "10.1.2.3/32"
 
   // passing information into our provider
   source     = "./interfaces"
