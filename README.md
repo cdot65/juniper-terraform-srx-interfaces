@@ -8,6 +8,11 @@ The goal of this project is to provide an example method to interact with Junipe
 
 This project will build an interface configuration on a Juniper SRX firewall
 
+- create interface `lo0`
+- apply a description of `provisioned with Terraform` to our new loopback
+- create a sub-interface of `lo0` with a unit ID of `0`
+- apply an IPv4 address of `10.1.2.3/32` to our `lo0.0`
+
 ## 📋 Terraform version compatibility
 
 This project was tested with Terraform version v1.1.7
