@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "junos-interfaces" {
-  host     = "192.168.105.196"
+  host     = "192.168.105.10"
   port     = var.juniper_ssh_port
   sshkey   = var.juniper_ssh_key
   username = var.juniper_user_name
@@ -16,13 +16,13 @@ provider "junos-interfaces" {
 }
 
 module "interfaces" {
-  // interface lo0 description "provisioned with Terraform"
-  // interface lo0 unit 0 family inet 10.1.2.3/32"
+  // interface lo0 description "WAN interface provisioned with Terraform"
+  // interface lo0 unit 0 family inet 74.51.0.2/24"
   apply_group_name      = "cdot65_interfaces"
-  interface_name        = "lo0"
-  interface_description = "provisioned with Terraform"
+  interface_name        = "ge-0/0/0"
+  interface_description = "WAN interface provisioned with Terraform"
   subinterface_unit     = "0"
-  subinterface_address  = "10.1.2.3/32"
+  subinterface_address  = "74.51.0.2/24"
 
   // passing information into our provider
   source     = "./interfaces"
